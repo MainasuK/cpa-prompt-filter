@@ -1,0 +1,14 @@
+plugins:
+  enabled: true
+  dir: "/opt/cliproxyapi/plugins"
+  configs:
+    prompt-filter:
+      enabled: true
+      priority: 100
+      # Message roles to inspect. Defaults to system when omitted.
+      roles: ["system"]
+      # Literal fragments to delete. Quote values that end with a space,
+      # otherwise the YAML parser drops the trailing whitespace.
+      patterns:
+        - "This sentence is rejected by the upstream gateway. "
+        - "So is this one; the gateway matches the pair together. "
